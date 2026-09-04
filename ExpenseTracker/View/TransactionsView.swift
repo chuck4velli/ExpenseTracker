@@ -35,8 +35,10 @@ struct TransactionsView: View {
             }
             .navigationTitle("Transactions")
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
+                if !transactions.isEmpty {
+                    ToolbarItem(placement: .topBarLeading) {
+                        EditButton()
+                    }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {

@@ -12,6 +12,7 @@ struct AddTransactionSheet: View {
     @State private var isSubscription = false
     @State private var notes = ""
 
+    @Namespace private var addSheet
 
     var body: some View {
         NavigationStack {
@@ -50,6 +51,7 @@ struct AddTransactionSheet: View {
                 }
             }
         }
+        .navigationTransition(.zoom(sourceID: "plus", in: addSheet))
     }
 
     private func saveTransaction() {
